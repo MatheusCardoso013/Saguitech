@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emissão de Nota Fiscal</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+</head>
+
+<body>
+    <header>
+        <h1 class="tituloPrincipal">Emissão de Nota Fiscal de Serviço (NFS-e)</h1>
+    </header>
+    <section class="notaFiscal">
+        <form class="formulario">
+            <h2>Dados de Entrada</h2>
+            <div class="item">
+                <label for="servico">Serviço:</label>
+                <input id="servico" >
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" min="1" id="quantidade" >
+                <label for="valor">Valor:</label>
+                <input type="number" min="0" id="valor" >
+            </div>
+            <div class="botaoDiv">
+                <button type="button" onclick="adicionaItem()" class="botaoAdd">Adicionar</button>
+            </div>
+
+            <div class="resumo">
+                <table id="tabela"></table>
+            </div>
+
+            <label for="irpf">Porcentagem IRPF (%):</label>
+            <input type="number" min="0" max="100" id="irpf" required>
+
+            <label for="pis">Porcentagem PIS (%):</label>
+            <input type="number" min="0" max="100" id="pis" required>
+
+            <label for="cofins">Porcentagem COFINS (%):</label>
+            <input type="number" min="0" max="100" id="cofins" required>
+
+            <label for="inss">Porcentagem INSS (%):</label>
+            <input type="number" min="0" max="100" id="inss" required>
+
+            <label for="issqn">Porcentagem ISSQN (%):</label>
+            <input type="number" min="0" max="100" id="issqn" required>
+
+            <button type="submit" onclick="gerarExibirNotaFiscal(event)">Gerar Nota Fiscal</button>
+
+        </form>
+        <div class="notaFiscalGerada"></div>
+    </section>
+</body>
+<script src="script.js"></script>
+
+</html>
